@@ -1,0 +1,12 @@
+.custom-control-input {
+    display: none !important;
+}
+
+.card {
+    &.is-active {
+        display: block;
+    }
+    &.is-disabled {
+        display: none;
+    }
+}
