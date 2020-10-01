@@ -4,6 +4,7 @@ import Header from './dashboard/Header';
 import Statistics from './dashboard/statistics';
 import Users from './dashboard/Users';
 import RegisterUser from './dashboard/RegisterUser';
+import Survey from './dashboard/Survey';
 
 const container = () => {
     return (
@@ -134,6 +135,7 @@ const Dashboard = () => {
             <Route exact path="/dashboard" component={container} />
             <Route exact path="/dashboard/users" component={Users} />
             <Route exact path="/dashboard/users/register-user" component={RegisterUser} />
+            <Route exact path="/dashboard/Survey" component={Survey} />
         </>
     )
 };

@@ -27,6 +27,11 @@ const Header = () => {
                         </Link>
                     </li>
                     <li className="nav-item">
+                        <Link to="/dashboard/Survey" className="nav-link">
+                            Encuestas
+                        </Link>
+                    </li>
+                    <li className="nav-item">
                         <Link to="/" className="nav-link">
                             Cerrar sesión
                         </Link>
