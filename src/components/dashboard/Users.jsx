@@ -27,7 +27,7 @@ const Users = () => {
             <div className="container">
                 <div className="row">
                     <div className="col-12 d-flex col-12 d-flex justify-content-between pt-4">
-                        <h2>Lista de estudiantes</h2>
+                        <h2>Lista de Usuarios</h2>
                         <Link to="/dashboard/users/register-user" className="align-items-center btn btn-primary d-flex">
                             Registrar usuario
                         </Link>
