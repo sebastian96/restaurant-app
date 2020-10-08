@@ -1,23 +1,9 @@
 import React from 'react';
-
+import Radio from './questionTypes/Radio';
+import Checkbox from './questionTypes/Checkbox';
 import '../assets/styles/components/Forms.scss';
 
 const Forms = ({questions}) => {
-
-    const radioSelect = (e) => {
-        console.log("radioSelect -> e", e.target.value)
-        const radios = document.querySelectorAll('.js-radio');
-        radios.forEach(input => {
-            const label = input.nextSibling;
-            if(input.checked) {
-                label.classList.add('btn-primary');
-                label.classList.remove('btn-outline-primary');
-            }else {
-                label.classList.remove('btn-primary');
-                label.classList.add('btn-outline-primary');
-            }
-        })
-    }
 
     const nextOrSend = (indexQuestion) => {
         if(indexQuestion === questions.length) {
@@ -36,6 +22,15 @@ const Forms = ({questions}) => {
         
     }
 
+    const printElement = (question) => {
+        switch(question.question.type) {
+            case 1:
+                return <Radio question={question}/>;
+            case 2:
+                return <Checkbox question={question}/>
+        };
+    }
+
     return(
         <>
             {questions.map((question, index) => ( 
@@ -44,19 +39,7 @@ const Forms = ({questions}) => {
                         <h4 className="text-white text-center">{question.textQuestion}</h4>
                     </div>
                     <div className="card-body d-flex justify-content-center">
-                        {question.options.map((option, i) => (
-                            <div className="custom-control custom-radio w-25" key={i}>
-                                <input 
-                                    type="radio" 
-                                    id={`radio_${i + 1}-${index + 1}`} 
-                                    name="radio" 
-                                    className="custom-control-input js-radio"
-                                    value={option}
-                                    onClick={radioSelect}
-                                />
-                                <label className="btn btn-outline-primary text-white w-100" htmlFor={`radio_${i + 1}-${index + 1}`}>{option}</label>
-                            </div>
-                        ))}
+                        {printElement({question, index})}
                     </div>
                     <div className="mb-4">
                         <button className="btn btn-success d-block m-auto" onClick={() => nextOrSend(index + 1)}>
