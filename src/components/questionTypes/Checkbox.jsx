@@ -1,17 +1,17 @@
 import React from 'react';
 import {changeClass} from '../../utils/domFunctions';
 
-const Checkbox = question => {
-    const index = question.question.index;
-    const quest = question.question.question;
+const Checkbox = ({questionContext, onCheck}) => {
+    const {index, question} = questionContext;
 
     const checkboxSelect = (e) => {
         changeClass('js-checkbox');
+        onCheck(true);
     };
 
     return (
         <>
-            {quest.options.map((option, i) => (
+            {question.options.map((option, i) => (
                 <div className="custom-control custom-radio w-25" key={i}>
                     <input 
                         className="custom-control-input js-checkbox"

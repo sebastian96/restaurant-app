@@ -1,0 +1,19 @@
+.textarea {
+    height: 150px !important;
+    resize: none;
+    overflow: auto;
+    float: left;
+}
+.textarea::-webkit-scrollbar {
+    width: 5px;
+}
+
+.textarea::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 20px;
+}
+
+.textarea::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 20px;
+}
