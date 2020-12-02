@@ -1,19 +1,24 @@
 import React from 'react';
 import {changeClass} from '../../utils/domFunctions';
 
-const Radio = ({questionContext, onCheck, info}) => {
+const Radio = ({questionContext, onCheck}) => {
     const {index, question} = questionContext;
-
+    
     const radioSelect = (e) => {
         changeClass('js-radio');
-        onCheck(true);
-        info(e.target.value);
+        onCheck({
+            isButtonDisplayed: false, 
+            answer: {
+                question_id: question.id,
+                answer: e.target.value
+            }
+        });
     };
 
     return(
         <>
             {question.options.map((option, i) => (
-                <div className="custom-control custom-radio w-25" key={i}>
+                <div className="custom-control custom-radio w-75" key={i}>
                     <input 
                         className="custom-control-input js-radio"
                         type="radio" 

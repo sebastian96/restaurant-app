@@ -1,3 +1,9 @@
+p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+.custom-control {
+    padding-left: 0px !important;
+}
 .custom-control-input {
     display: none !important;
 }
@@ -9,8 +15,9 @@
     &.is-disabled {
         display: none;
     }
-}
-
-p {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    .range {
+        .h1 {
+            font-size: 2.3rem;
+        }
+    }
 }

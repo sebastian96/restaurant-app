@@ -8,3 +8,15 @@
     margin-left: 0 !important;
     overflow: hidden;
 }
+
+.questions {
+    height: 100%;
+    @media screen and (max-width:414px){
+        height: 80%;
+        .card-header {
+            h4 {
+                font-size: 1.0rem;
+            }
+        }
+    }
+}

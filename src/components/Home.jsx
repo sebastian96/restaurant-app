@@ -8,11 +8,14 @@ import Forms from './Forms';
 const Home = () => {
     const [showResults, setShowResults] = useState(false)
     const [questions, setQuestions] = useState([]);
+
     const getQuestions = () => {
         db.collection('questions').onSnapshot(res => {
             let questions = [];
             res.forEach(question => {
-                questions.push(question.data())
+                let ask = question.data();
+                ask.id = question.id;
+                questions.push(ask);
             })
             setQuestions(questions);
         });
@@ -34,12 +37,12 @@ const Home = () => {
         <div className="bg-image">
             <header className="row">
                 <div className="col-12">
-                    <a className="m-3 float-right btn btn-outline-light btn-lg" onClick={handleLogin}>Login</a>
+                    <button className="m-3 float-right btn btn-outline-light btn-lg" onClick={handleLogin}>Login</button>
                 </div>
             </header>
             {!showResults ?
-                <div className="row h-100">
-                    <div className="col-6 m-auto">
+                <div className="row questions">
+                    <div className="col-10 m-auto">
                         <Forms questions={questions}/>
                     </div>
                 </div>
