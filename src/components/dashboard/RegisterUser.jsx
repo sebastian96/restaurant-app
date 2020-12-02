@@ -1,5 +1,4 @@
-import React, {useState, useEffect}  from 'react';
-import { withRouter } from 'react-router-dom';
+import React, {useState}  from 'react';
 import {auth, db} from '../../firebase/firebase';
 import '../../assets/styles/components/RegisterUser.scss';
 
@@ -143,5 +142,4 @@ const ListUsers = props => {
         </div>
     );
 };
-
 export default ListUsers;
